@@ -5,7 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
 <script type="text/javascript">
 	window.onload = function changebg() {
 		<% 
@@ -19,30 +18,12 @@
 	}
 	
 </script>
+
 </head>
 <body>
 
-hi, click on the link to choose your background color:
-<form action="index.jsp" method="GET">
-	<input type="radio" name="color" value="red">Red
-	<input type="radio" name="color" value="blue">Blue
-
-<%
-	String c = request.getParameter("color");
-	session.setAttribute("color", c);
-	out.println(request.getParameter("color"));
-	out.println(session.getAttribute("color"));
-
-%>
-	<input type="submit" onclick="localtion.reload(true)">
-</form>
-
-<ul>
-<li><a href="1.jsp">Page 1</a></li>
-<li><a href="2.jsp">Page 2</a></li>
-<li><a href="3.jsp">Page 3</a></li>
-
-</ul>
-
+First page
+<br>
+<a href="index.jsp">Back</a>
 </body>
 </html>
