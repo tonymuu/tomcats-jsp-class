@@ -8,9 +8,6 @@
 </head>
 <body>
 
-	<a href="/Hello/Hello/Hello.jsp">Logon</a>
-	<a href="/Hello/HelloEveryone/Hello.jsp">Guest</a>
-	
 
 </body>
 </html>
