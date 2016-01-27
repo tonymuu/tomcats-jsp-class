@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<%
-	String s = config.getServletContext().getInitParameter("welcome");
-	out.println(s);
-%>
+	<a href="/Hello/Hello/Hello.jsp">Logon</a>
+	<a href="/Hello/HelloEveryone/Hello.jsp">Guest</a>
+	
 
 </body>
 </html>
