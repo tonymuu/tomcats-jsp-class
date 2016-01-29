@@ -14,6 +14,7 @@
   <H1>Your online Bookshop</H1>
   <hr/><p/>
 <%  // Scriptlet 1: check whether the book list is ready
+
   Vector booklist =
       (Vector<ebookshop.Book>)session.getAttribute("ebookshop.list");
   if (booklist == null) {

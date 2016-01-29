@@ -29,9 +29,10 @@ public class ShoppingServlet extends HttpServlet {
     Vector<Book> shoplist =
       (Vector<Book>)session.getAttribute("ebookshop.cart");
     String do_this = req.getParameter("do_this");
-    // If it is the first time, initialize the list of books, which in
-    // real life would be stored in a database on disk
-    if (do_this != null) {
+    
+//     If it is the first time, initialize the list of books, which in
+//     real life would be stored in a database on disk
+    if (do_this == null) {
       Vector<String> blist = new Vector<String>();
       blist.addElement("Go Set a Watchman. Harper Lee $30.99");
       blist.addElement("Learn HTML5 and JavaScript for iOS. Scott Preston $39.99");
@@ -47,6 +48,7 @@ public class ShoppingServlet extends HttpServlet {
       session.setAttribute("ebookshop.list", blist);
       ServletContext    sc = getServletContext();
       RequestDispatcher rd = sc.getRequestDispatcher("/");
+      req.setAttribute("ebookshop.list", blist);
       rd.forward(req, res);
       }
     else {
