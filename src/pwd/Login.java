@@ -51,23 +51,25 @@ public class Login extends HttpServlet {
 		String d = request.getParameter("distance");
 		String option = request.getParameter("item");
 		HttpSession session = request.getSession();
+		Calculator c = new Calculator();
+		
 		
 		if (option.equals("rate")) {
 			double distance = Double.valueOf(d);
 			double time = Double.valueOf(t);
-			double rate = distance / time;
+			double rate = c.rate(time, distance);
 			session.setAttribute("result", rate);
 
 		} else if (option.equals("time")) {
 			double rate = Double.valueOf(r);
 			double distance = Double.valueOf(d);
-			double time = distance / rate;
+			double time = c.time(rate, distance);
 			session.setAttribute("result", time);
 
 		} else if (option.equals("distance")) {
 			double rate = Double.valueOf(r);
 			double time = Double.valueOf(t);
-			double distance = rate * time;
+			double distance = c.distance(time, rate);
 			session.setAttribute("result", distance);
 		} else {
 			session.setAttribute("result", "error");
