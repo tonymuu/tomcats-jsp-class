@@ -10,16 +10,22 @@
 
 
 	<FORM NAME="form1" action="login" method="post">
-		<input type="text" name="usr">
-		<input type="password" name="pwd">
-		<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Login">
+		<p>Select which item to calculate</p>
+		<select name="item">
+			<option value="rate">rate</option>
+			<option value="time">time</option>
+			<option value="distance">distance</option>
+		</select>
+		<br>
+		<p>Enter values. Leave the one to calculate blank</p>
+		 Rate<input type="text" name="rate"> 
+		 Time<input type="text" name="time"> 
+		Distance<input type="text" name="distance">
+		<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Calculate">
 	</FORM>
-	
+
 	<%
-		String str = (String)session.getAttribute("login");
-		if (str != null && str.equals("false")) {
-			out.println("Your username/password is incorrect");
-		}
+		out.println(session.getAttribute("result"));
 	%>
 
 </body>
